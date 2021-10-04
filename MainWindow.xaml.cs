@@ -23,6 +23,8 @@ namespace Enigma
         public MainWindow()
         {
             InitializeComponent();
+            char[] arr1 = { 'E', 'K', 'M', 'F', 'L', 'G', 'D', 'Q', 'V', 'Z', 'N', 'T', 'O', 'W', 'Y', 'H', 'X', 'U', 'S', 'P', 'A', 'I', 'B', 'R', 'C', 'J' };
+            Rotor rotor1 = new Rotor(arr1);
         }
 
 
