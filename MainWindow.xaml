@@ -1,0 +1,63 @@
+﻿<Window x:Class="Enigma.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Enigma"
+        mc:Ignorable="d"
+        Title="Enigma" Height="500" Width="800" KeyDown="Window_KeyDown_1" Background="White" Foreground="White" KeyUp="Window_KeyUp">
+    <Grid>
+        <Ellipse x:Name="QElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="25,187,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <TextBlock HorizontalAlignment="Left" Margin="46,208,0,0" TextWrapping="Wrap" Text="Q" VerticalAlignment="Top" Height="31" Width="19" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <Ellipse x:Name="WElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="101,187,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <TextBlock HorizontalAlignment="Left" Margin="122,208,0,0" TextWrapping="Wrap" Text="W" VerticalAlignment="Top" Height="31" Width="22" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <Ellipse x:Name="ZElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="101,343,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <TextBlock HorizontalAlignment="Left" Margin="122,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="19" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"><Run Text="Z"/><LineBreak/><Run/></TextBlock>
+        <Ellipse x:Name="AElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="61,265,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <TextBlock HorizontalAlignment="Left" Margin="84,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="22" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"><Run Text="A"/><LineBreak/><Run/></TextBlock>
+        <Ellipse x:Name="EElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="178,187,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="RElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="254,187,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="TElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="336,187,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="YElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="412,187,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="UElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="488,187,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="IElipse" HorizontalAlignment="Left" Height="73" Margin="564,187,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="OElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="643,187,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="PElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="719,187,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="SElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="141,265,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="DElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="220,265,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="FElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="301,265,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="GElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="377,265,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="HElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="458,265,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="JElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="542,265,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="KElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="610,265,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="LElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="689,265,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="XElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="185,343,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="CElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="264,343,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="VElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="345,343,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="BElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="421,343,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="NElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="502,343,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <Ellipse x:Name="MElipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="73" Margin="586,343,0,0" Stroke="Black" VerticalAlignment="Top" Width="63"/>
+        <TextBlock HorizontalAlignment="Left" Margin="200,208,0,0" TextWrapping="Wrap" Text="E" VerticalAlignment="Top" Height="31" Width="19" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="276,208,0,0" TextWrapping="Wrap" Text="R" VerticalAlignment="Top" Height="31" Width="22" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="356,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="19" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"><Run Text="T"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="432,208,0,0" TextWrapping="Wrap" Text="Y" VerticalAlignment="Top" Height="31" Width="22" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="510,208,0,0" TextWrapping="Wrap" Text="U" VerticalAlignment="Top" Height="31" Width="19" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="586,208,0,0" TextWrapping="Wrap" Text="I" VerticalAlignment="Top" Height="31" Width="22" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="166,285,0,0" TextWrapping="Wrap" Text="S" VerticalAlignment="Top" Height="31" Width="19" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="242,285,0,0" TextWrapping="Wrap" Text="D" VerticalAlignment="Top" Height="31" Width="22" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="320,285,0,0" TextWrapping="Wrap" Text="F" VerticalAlignment="Top" Height="31" Width="19" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="396,285,0,0" TextWrapping="Wrap" Text="G" VerticalAlignment="Top" Height="31" Width="22" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="478,285,0,0" TextWrapping="Wrap" Text="H" VerticalAlignment="Top" Height="31" Width="19" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="554,285,0,0" TextWrapping="Wrap" Text="J" VerticalAlignment="Top" Height="31" Width="22" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="632,285,0,0" TextWrapping="Wrap" Text="K" VerticalAlignment="Top" Height="31" Width="19" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="708,285,0,0" TextWrapping="Wrap" Text="L" VerticalAlignment="Top" Height="31" Width="22" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="213,364,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" Height="31" Width="19" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="289,364,0,0" TextWrapping="Wrap" Text="C" VerticalAlignment="Top" Height="31" Width="22" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="367,364,0,0" TextWrapping="Wrap" Text="V" VerticalAlignment="Top" Height="31" Width="19" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="443,364,0,0" TextWrapping="Wrap" Text="B" VerticalAlignment="Top" Height="31" Width="22" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="668,208,0,0" TextWrapping="Wrap" Text="O" VerticalAlignment="Top" Height="31" Width="19" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="744,208,0,0" TextWrapping="Wrap" Text="P" VerticalAlignment="Top" Height="31" Width="22" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="529,364,0,0" TextWrapping="Wrap" Text="N" VerticalAlignment="Top" Height="31" Width="19" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="605,364,0,0" TextWrapping="Wrap" Text="M" VerticalAlignment="Top" Height="31" Width="22" FontSize="24" RenderTransformOrigin="1.158,0.531" Foreground="Black"/>
+    </Grid>
+</Window>
