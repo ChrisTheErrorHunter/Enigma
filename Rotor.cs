@@ -17,8 +17,19 @@ namespace Enigma
             {
                 inttab[i] = Convert.ToInt32(sign) - 65;
                 Console.WriteLine(inttab[i]);
+                i++;
             }
 
+        }
+        public void moveUp()
+        {
+            int tmp = inttab[25];
+            for(int j = 1; j < 26; j++)
+            {
+                inttab[j] = inttab[j - 1];
+            }
+            inttab[0] = tmp;
+            //Console.WriteLine(inttab);
         }
 
     }
