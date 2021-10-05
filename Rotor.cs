@@ -8,7 +8,8 @@ namespace Enigma
 {
     public class Rotor
     {
-        private int rotations = 0;
+        private int rotations = 260;
+        private int adder = 0;
         private int[] inttab = new int[26];
         public Rotor(char[] arr)
         {
@@ -30,6 +31,7 @@ namespace Enigma
                 inttab[j] = inttab[j - 1];
             }
             inttab[0] = tmp;
+            rotations--;
             //for (int k = 0; k < 26; k++) Console.WriteLine(inttab[k]);
         }
         public void moveUp()
@@ -44,9 +46,15 @@ namespace Enigma
             rotations++;
             //for (int k = 0; k < 26; k++) Console.WriteLine(inttab[k]);
         }
+
+        public void fakeMove()
+        {
+            adder++;
+            adder %= 26;
+        }
         public int rightImpulse(int c)
         {
-            return inttab[c];
+            return inttab[c + adder];
         }
         public int leftImpulse(int c)
         {

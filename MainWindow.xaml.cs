@@ -23,7 +23,7 @@ namespace Enigma
         char[] arr0 = { 'E', 'K', 'M', 'F', 'L', 'G', 'D', 'Q', 'V', 'Z', 'N', 'T', 'O', 'W', 'Y', 'H', 'X', 'U', 'S', 'P', 'A', 'I', 'B', 'R', 'C', 'J' }; // I
         char[] arr1 = { 'A', 'J', 'D', 'K', 'S', 'I', 'R', 'U', 'X', 'B', 'L', 'H', 'W', 'T', 'M', 'C', 'Q', 'G', 'Z', 'N', 'P', 'Y', 'F', 'V', 'O', 'E' }; // II
         char[] arr2 = { 'B', 'D', 'F', 'H', 'J', 'L', 'C', 'P', 'R', 'T', 'X', 'V', 'Z', 'N', 'Y', 'E', 'I', 'W', 'G', 'A', 'K', 'M', 'U', 'S', 'Q', 'O' }; // III
-        char[] arr3 = { 'E', 'N', 'K', 'Q', 'A', 'U', 'Y', 'W', 'J', 'I', 'C', 'O', 'P', 'B', 'L', 'M', 'D', 'X', 'Z', 'V', 'F', 'T', 'H', 'R', 'G', 'S' }; //ZWROTNY!!! UKW B M4
+        char[] arr3 = { 'E', 'N', 'K', 'Q', 'A', 'U', 'Y', 'W', 'J', 'I', 'C', 'O', 'P', 'B', 'L', 'M', 'D', 'X', 'Z', 'V', 'F', 'T', 'H', 'R', 'G', 'S' }; //ZWROTNY STACJONARNY!!! UKW B M4
         Rotor rotor0, rotor1, rotor2, rotor3;
         char letter = '0';
         public MainWindow()
@@ -39,6 +39,22 @@ namespace Enigma
             updateRotors(0);
         }
 
+        private void tick()
+        {
+            rotor0.moveUp();
+            updateRotors(0);
+            if (rotor0.Rotations % 26 == 0)
+            {
+                rotor1.moveUp();
+                updateRotors(1);
+                if (rotor1.Rotations % 26 == 0)
+                {
+                    rotor2.moveUp();
+                    updateRotors(2);
+                }
+            }
+        }
+
         private char encode(char letter)
         {
 
@@ -50,13 +66,11 @@ namespace Enigma
             iletter = rotor2.leftImpulse(iletter);
             iletter = rotor1.leftImpulse(iletter);
             iletter = rotor0.leftImpulse(iletter);
+            tick();
             return Convert.ToChar(iletter + 65);
         }
 
-        private void tick()
-        {
-
-        }
+        
         private void Window_KeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Q) letter = encode('Q');
@@ -159,44 +173,40 @@ namespace Enigma
             }
             if (num == 2)
             {
-                char[] rotValues = rotor2.visibleLetters();
-                Rotor2txtU2.Text = Convert.ToString(rotValues[0]);
-                Rotor2txtU1.Text = Convert.ToString(rotValues[1]);
-                Rotor2txtCenter.Text = Convert.ToString(rotValues[2]);
-                Rotor2txtD1.Text = Convert.ToString(rotValues[3]);
-                Rotor2txtD2.Text = Convert.ToString(rotValues[4]);
+                int rotValue = rotor2.Rotations;
+                Rotor2txtU2.Text = Convert.ToString(Convert.ToChar((((rotValue - 2) % 26) + 65)));
+                Rotor2txtU1.Text = Convert.ToString(Convert.ToChar((((rotValue - 1) % 26) + 65)));
+                Rotor2txtCenter.Text = Convert.ToString(Convert.ToChar(((rotValue % 26) + 65)));
+                Rotor2txtD1.Text = Convert.ToString(Convert.ToChar((((rotValue + 1) % 26) + 65)));
+                Rotor2txtD2.Text = Convert.ToString(Convert.ToChar((((rotValue + 2) % 26) + 65)));
             }
             if (num == 1)
             {
-                char[] rotValues = rotor1.visibleLetters();
-                Rotor1txtU2.Text = Convert.ToString(rotValues[0]);
-                Rotor1txtU1.Text = Convert.ToString(rotValues[1]);
-                Rotor1txtCenter.Text = Convert.ToString(rotValues[2]);
-                Rotor1txtD1.Text = Convert.ToString(rotValues[3]);
-                Rotor1txtD2.Text = Convert.ToString(rotValues[4]);
+                int rotValue = rotor1.Rotations;
+                Rotor1txtU2.Text = Convert.ToString(Convert.ToChar((((rotValue - 2) % 26) + 65)));
+                Rotor1txtU1.Text = Convert.ToString(Convert.ToChar((((rotValue - 1) % 26) + 65)));
+                Rotor1txtCenter.Text = Convert.ToString(Convert.ToChar(((rotValue % 26) + 65)));
+                Rotor1txtD1.Text = Convert.ToString(Convert.ToChar((((rotValue + 1) % 26) + 65)));
+                Rotor1txtD2.Text = Convert.ToString(Convert.ToChar((((rotValue + 2) % 26) + 65)));
             }
             if (num == 0)
             {
-                char[] rotValues = rotor0.visibleLetters();
-                Rotor0txtU2.Text = Convert.ToString(rotValues[0]);
-                Rotor0txtU1.Text = Convert.ToString(rotValues[1]);
-                Rotor0txtCenter.Text = Convert.ToString(rotValues[2]);
-                Rotor0txtD1.Text = Convert.ToString(rotValues[3]);
-                Rotor0txtD2.Text = Convert.ToString(rotValues[4]);
+                //char[] rotValues = rotor0.visibleLetters();
+                //Rotor0txtU2.Text = Convert.ToString(rotValues[0]);
+                //Rotor0txtU1.Text = Convert.ToString(rotValues[1]);
+                //Rotor0txtCenter.Text = Convert.ToString(rotValues[2]);
+                //Rotor0txtD1.Text = Convert.ToString(rotValues[3]);
+                //Rotor0txtD2.Text = Convert.ToString(rotValues[4]);
+                int rotValue = rotor0.Rotations;
+                Rotor0txtU2.Text = Convert.ToString(Convert.ToChar((((rotValue - 2) % 26) + 65)));
+                Rotor0txtU1.Text = Convert.ToString(Convert.ToChar((((rotValue - 1) % 26) + 65)));
+                Rotor0txtCenter.Text = Convert.ToString(Convert.ToChar(((rotValue % 26) + 65)));
+                Rotor0txtD1.Text = Convert.ToString(Convert.ToChar((((rotValue + 1) % 26) + 65)));
+                Rotor0txtD2.Text = Convert.ToString(Convert.ToChar((((rotValue + 2) % 26) + 65)));
             }
 
         }
 
-        private void Rotor3UpBtn_Click(object sender, RoutedEventArgs e)
-        {
-            rotor3.moveUp();
-            updateRotors(3);
-        }
-        private void Rotor3DownBtn_Click(object sender, RoutedEventArgs e)
-        {
-            rotor3.moveDown();
-            updateRotors(3);
-        }
         private void Rotor2UpBtn_Click(object sender, RoutedEventArgs e)
         {
             rotor2.moveUp();
