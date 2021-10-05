@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Enigma
 {
-    class Rotor
+    public class Rotor
     {
         private int[] inttab = new int[26];
         public Rotor(char[] arr)
@@ -50,6 +50,16 @@ namespace Enigma
         {
             for (int i = 0; i < 26; i++) if (inttab[i] == c) return i;
             return -1;
+        }
+        public char[] visibleLetters()
+        {
+            char[] values = new char[5];
+            values[0] = Convert.ToChar(inttab[24] + 65);
+            values[1] = Convert.ToChar(inttab[25] + 65);
+            values[2] = Convert.ToChar(inttab[0] + 65);
+            values[3] = Convert.ToChar(inttab[1] + 65);
+            values[4] = Convert.ToChar(inttab[2] + 65);
+            return values;
         }
 
     }
