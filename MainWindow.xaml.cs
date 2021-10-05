@@ -38,9 +38,26 @@ namespace Enigma
             updateRotors(0);
         }
 
+        private char encode(char letter)
+        {
+            int iletter = Convert.ToInt32(letter) - 65;
+            iletter = rotor0.rightImpulse(iletter);
+            iletter = rotor1.rightImpulse(iletter);
+            iletter = rotor2.rightImpulse(iletter);
+            iletter = rotor3.rightImpulse(iletter);
+            iletter = rotor2.leftImpulse(iletter);
+            iletter = rotor1.leftImpulse(iletter);
+            iletter = rotor0.leftImpulse(iletter);
+            return Convert.ToChar(iletter + 65);
+        }
 
+        private void tick()
+        {
+
+        }
         private void Window_KeyDown_1(object sender, KeyEventArgs e)
         {
+
             if (e.Key == Key.Q) QElipse.Fill = Brushes.Gold;
             if (e.Key == Key.W) WElipse.Fill = Brushes.Gold;
             if (e.Key == Key.E) EElipse.Fill = Brushes.Gold;

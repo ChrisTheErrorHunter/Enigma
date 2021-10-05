@@ -8,11 +8,12 @@ namespace Enigma
 {
     public class Rotor
     {
+        private int rotations = 0;
         private int[] inttab = new int[26];
         public Rotor(char[] arr)
         {
             int i = 0;
-            foreach(char sign in arr)
+            foreach (char sign in arr)
             {
                 inttab[i] = Convert.ToInt32(sign) - 65;
                 i++;
@@ -24,7 +25,7 @@ namespace Enigma
         {
             Console.WriteLine("Move Down");
             int tmp = inttab[25];
-            for(int j = 25; j > 0; j--)
+            for (int j = 25; j > 0; j--)
             {
                 inttab[j] = inttab[j - 1];
             }
@@ -40,6 +41,7 @@ namespace Enigma
                 inttab[j] = inttab[j + 1];
             }
             inttab[25] = tmp;
+            rotations++;
             //for (int k = 0; k < 26; k++) Console.WriteLine(inttab[k]);
         }
         public int rightImpulse(int c)
@@ -61,6 +63,13 @@ namespace Enigma
             values[4] = Convert.ToChar(inttab[2] + 65);
             return values;
         }
+        public int Rotations
+            {
+                get
+                {
+                    return rotations;
+                }
+            }
 
     }
 }
