@@ -20,16 +20,16 @@ namespace Enigma
     /// </summary>
     public partial class MainWindow : Window
     {
-        char[] arr0 = { 'E', 'K', 'M', 'F', 'L', 'G', 'D', 'Q', 'V', 'Z', 'N', 'T', 'O', 'W', 'Y', 'H', 'X', 'U', 'S', 'P', 'A', 'I', 'B', 'R', 'C', 'J' };
-        char[] arr1 = { 'A', 'J', 'D', 'K', 'S', 'I', 'R', 'U', 'X', 'B', 'L', 'H', 'W', 'T', 'M', 'C', 'Q', 'G', 'Z', 'N', 'P', 'Y', 'F', 'V', 'O', 'E' };
-        char[] arr2 = { 'B', 'D', 'F', 'H', 'J', 'L', 'C', 'P', 'R', 'T', 'X', 'V', 'Z', 'N', 'Y', 'E', 'I', 'W', 'G', 'A', 'K', 'M', 'U', 'S', 'Q', 'O' };
-        char[] arr3 = { 'E', 'S', 'O', 'V', 'P', 'Z', 'J', 'A', 'Y', 'Q', 'U', 'I', 'R', 'H', 'X', 'L', 'N', 'F', 'T', 'G', 'K', 'D', 'C', 'M', 'W', 'B' };
+        char[] arr0 = { 'E', 'K', 'M', 'F', 'L', 'G', 'D', 'Q', 'V', 'Z', 'N', 'T', 'O', 'W', 'Y', 'H', 'X', 'U', 'S', 'P', 'A', 'I', 'B', 'R', 'C', 'J' }; // I
+        char[] arr1 = { 'A', 'J', 'D', 'K', 'S', 'I', 'R', 'U', 'X', 'B', 'L', 'H', 'W', 'T', 'M', 'C', 'Q', 'G', 'Z', 'N', 'P', 'Y', 'F', 'V', 'O', 'E' }; // II
+        char[] arr2 = { 'B', 'D', 'F', 'H', 'J', 'L', 'C', 'P', 'R', 'T', 'X', 'V', 'Z', 'N', 'Y', 'E', 'I', 'W', 'G', 'A', 'K', 'M', 'U', 'S', 'Q', 'O' }; // III
+        char[] arr3 = { 'E', 'N', 'K', 'Q', 'A', 'U', 'Y', 'W', 'J', 'I', 'C', 'O', 'P', 'B', 'L', 'M', 'D', 'X', 'Z', 'V', 'F', 'T', 'H', 'R', 'G', 'S' }; //ZWROTNY!!! UKW B M4
         Rotor rotor0, rotor1, rotor2, rotor3;
         char letter = '0';
         public MainWindow()
         {
             InitializeComponent();
-            rotor3 = new Rotor(arr3);
+            rotor3 = new Rotor(arr3); //ZWROTNY
             rotor2 = new Rotor(arr2);
             rotor1 = new Rotor(arr1);
             rotor0 = new Rotor(arr0);
@@ -41,6 +41,7 @@ namespace Enigma
 
         private char encode(char letter)
         {
+
             int iletter = Convert.ToInt32(letter) - 65;
             iletter = rotor0.rightImpulse(iletter);
             iletter = rotor1.rightImpulse(iletter);
@@ -84,7 +85,6 @@ namespace Enigma
             if (e.Key == Key.B) letter = encode('B');
             if (e.Key == Key.N) letter = encode('N');
             if (e.Key == Key.M) letter = encode('M');
-            Console.WriteLine(letter);
             if (letter == 'Q') QElipse.Fill = Brushes.Gold;
             if (letter == 'W') WElipse.Fill = Brushes.Gold;
             if (letter == 'E') EElipse.Fill = Brushes.Gold;
