@@ -25,6 +25,7 @@ namespace Enigma
         char[] arr2 = { 'B', 'D', 'F', 'H', 'J', 'L', 'C', 'P', 'R', 'T', 'X', 'V', 'Z', 'N', 'Y', 'E', 'I', 'W', 'G', 'A', 'K', 'M', 'U', 'S', 'Q', 'O' };
         char[] arr3 = { 'E', 'S', 'O', 'V', 'P', 'Z', 'J', 'A', 'Y', 'Q', 'U', 'I', 'R', 'H', 'X', 'L', 'N', 'F', 'T', 'G', 'K', 'D', 'C', 'M', 'W', 'B' };
         Rotor rotor0, rotor1, rotor2, rotor3;
+        char letter = '0';
         public MainWindow()
         {
             InitializeComponent();
@@ -57,63 +58,90 @@ namespace Enigma
         }
         private void Window_KeyDown_1(object sender, KeyEventArgs e)
         {
+            if (e.Key == Key.Q) letter = encode('Q');
+            if (e.Key == Key.W) letter = encode('W');
+            if (e.Key == Key.E) letter = encode('E');
+            if (e.Key == Key.R) letter = encode('R');
+            if (e.Key == Key.T) letter = encode('T');
+            if (e.Key == Key.Y) letter = encode('Y');
+            if (e.Key == Key.U) letter = encode('U');
+            if (e.Key == Key.I) letter = encode('I');
+            if (e.Key == Key.O) letter = encode('O');
+            if (e.Key == Key.P) letter = encode('P');
+            if (e.Key == Key.A) letter = encode('A');
+            if (e.Key == Key.S) letter = encode('S');
+            if (e.Key == Key.D) letter = encode('D');
+            if (e.Key == Key.F) letter = encode('F');
+            if (e.Key == Key.G) letter = encode('G');
+            if (e.Key == Key.H) letter = encode('H');
+            if (e.Key == Key.J) letter = encode('J');
+            if (e.Key == Key.K) letter = encode('K');
+            if (e.Key == Key.L) letter = encode('L');
+            if (e.Key == Key.Z) letter = encode('Z');
+            if (e.Key == Key.X) letter = encode('X');
+            if (e.Key == Key.C) letter = encode('C');
+            if (e.Key == Key.V) letter = encode('V');
+            if (e.Key == Key.B) letter = encode('B');
+            if (e.Key == Key.N) letter = encode('N');
+            if (e.Key == Key.M) letter = encode('M');
+            Console.WriteLine(letter);
+            if (letter == 'Q') QElipse.Fill = Brushes.Gold;
+            if (letter == 'W') WElipse.Fill = Brushes.Gold;
+            if (letter == 'E') EElipse.Fill = Brushes.Gold;
+            if (letter == 'R') RElipse.Fill = Brushes.Gold;
+            if (letter == 'T') TElipse.Fill = Brushes.Gold;
+            if (letter == 'Y') YElipse.Fill = Brushes.Gold;
+            if (letter == 'U') UElipse.Fill = Brushes.Gold;
+            if (letter == 'I') IElipse.Fill = Brushes.Gold;
+            if (letter == 'O') OElipse.Fill = Brushes.Gold;
+            if (letter == 'P') PElipse.Fill = Brushes.Gold;
+            if (letter == 'A') AElipse.Fill = Brushes.Gold;
+            if (letter == 'S') SElipse.Fill = Brushes.Gold;
+            if (letter == 'D') DElipse.Fill = Brushes.Gold;
+            if (letter == 'F') FElipse.Fill = Brushes.Gold;
+            if (letter == 'G') GElipse.Fill = Brushes.Gold;
+            if (letter == 'H') HElipse.Fill = Brushes.Gold;
+            if (letter == 'J') JElipse.Fill = Brushes.Gold;
+            if (letter == 'K') KElipse.Fill = Brushes.Gold;
+            if (letter == 'L') LElipse.Fill = Brushes.Gold;
+            if (letter == 'Z') ZElipse.Fill = Brushes.Gold;
+            if (letter == 'X') XElipse.Fill = Brushes.Gold;
+            if (letter == 'C') CElipse.Fill = Brushes.Gold;
+            if (letter == 'V') VElipse.Fill = Brushes.Gold;
+            if (letter == 'B') BElipse.Fill = Brushes.Gold;
+            if (letter == 'N') NElipse.Fill = Brushes.Gold;
+            if (letter == 'M') MElipse.Fill = Brushes.Gold;
 
-            if (e.Key == Key.Q) QElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.W) WElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.E) EElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.R) RElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.T) TElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.Y) YElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.U) UElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.I) IElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.O) OElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.P) PElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.A) AElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.S) SElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.D) DElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.F) FElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.G) GElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.H) HElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.J) JElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.K) KElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.L) LElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.Z) ZElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.X) XElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.C) CElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.V) VElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.B) BElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.N) NElipse.Fill = Brushes.Gold;
-            if (e.Key == Key.M) MElipse.Fill = Brushes.Gold;
         }
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Q) QElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.W) WElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.E) EElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.R) RElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.T) TElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.Y) YElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.U) UElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.I) IElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.O) OElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.P) PElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.A) AElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.S) SElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.D) DElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.F) FElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.G) GElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.H) HElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.J) JElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.K) KElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.L) LElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.Z) ZElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.X) XElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.C) CElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.V) VElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.B) BElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.N) NElipse.Fill = Brushes.Transparent;
-            if (e.Key == Key.M) MElipse.Fill = Brushes.Transparent;
+            if (letter == 'Q') QElipse.Fill = Brushes.Transparent;
+            if (letter == 'W') WElipse.Fill = Brushes.Transparent;
+            if (letter == 'E') EElipse.Fill = Brushes.Transparent;
+            if (letter == 'R') RElipse.Fill = Brushes.Transparent;
+            if (letter == 'T') TElipse.Fill = Brushes.Transparent;
+            if (letter == 'Y') YElipse.Fill = Brushes.Transparent;
+            if (letter == 'U') UElipse.Fill = Brushes.Transparent;
+            if (letter == 'I') IElipse.Fill = Brushes.Transparent;
+            if (letter == 'O') OElipse.Fill = Brushes.Transparent;
+            if (letter == 'P') PElipse.Fill = Brushes.Transparent;
+            if (letter == 'A') AElipse.Fill = Brushes.Transparent;
+            if (letter == 'S') SElipse.Fill = Brushes.Transparent;
+            if (letter == 'D') DElipse.Fill = Brushes.Transparent;
+            if (letter == 'F') FElipse.Fill = Brushes.Transparent;
+            if (letter == 'G') GElipse.Fill = Brushes.Transparent;
+            if (letter == 'H') HElipse.Fill = Brushes.Transparent;
+            if (letter == 'J') JElipse.Fill = Brushes.Transparent;
+            if (letter == 'K') KElipse.Fill = Brushes.Transparent;
+            if (letter == 'L') LElipse.Fill = Brushes.Transparent;
+            if (letter == 'Z') ZElipse.Fill = Brushes.Transparent;
+            if (letter == 'X') XElipse.Fill = Brushes.Transparent;
+            if (letter == 'C') CElipse.Fill = Brushes.Transparent;
+            if (letter == 'V') VElipse.Fill = Brushes.Transparent;
+            if (letter == 'B') BElipse.Fill = Brushes.Transparent;
+            if (letter == 'N') NElipse.Fill = Brushes.Transparent;
+            if (letter == 'M') MElipse.Fill = Brushes.Transparent;
         }
 
 
