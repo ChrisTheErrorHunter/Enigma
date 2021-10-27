@@ -54,7 +54,7 @@ namespace Enigma
                 {
                     rotor2.moveUp();
                     updateRotors(2);
-                    if(rotor2.Rotations % 26 ==0)
+                    if(rotor2.Rotations % 26 == 0)
                     {
                         rotor3.moveUp();
                         updateRotors(3);

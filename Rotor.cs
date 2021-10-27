@@ -23,7 +23,6 @@ namespace Enigma
         }
         public void moveDown()
         {
-            Console.WriteLine("Move Down");
             int tmp = inttab[25];
             for (int j = 25; j > 0; j--)
             {
@@ -34,7 +33,6 @@ namespace Enigma
         }
         public void moveUp()
         {
-            Console.WriteLine("Move Up");
             int tmp = inttab[0];
             for (int j = 0; j < 25; j++)
             {
