@@ -225,6 +225,19 @@ namespace Enigma
             rotor2.moveDown();
             updateRotors(2);
         }
+
+        private void Rotor3UpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            rotor3.moveUp();
+            updateRotors(3);
+        }
+
+        private void Rotor3DownBtn_Click(object sender, RoutedEventArgs e)
+        {
+            rotor3.moveDown();
+            updateRotors(3);
+        }
+
         private void Rotor1UpBtn_Click(object sender, RoutedEventArgs e)
         {
             rotor1.moveUp();
