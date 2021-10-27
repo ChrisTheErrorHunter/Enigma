@@ -23,13 +23,16 @@ namespace Enigma
         char[] arr0 = { 'E', 'K', 'M', 'F', 'L', 'G', 'D', 'Q', 'V', 'Z', 'N', 'T', 'O', 'W', 'Y', 'H', 'X', 'U', 'S', 'P', 'A', 'I', 'B', 'R', 'C', 'J' }; // I
         char[] arr1 = { 'A', 'J', 'D', 'K', 'S', 'I', 'R', 'U', 'X', 'B', 'L', 'H', 'W', 'T', 'M', 'C', 'Q', 'G', 'Z', 'N', 'P', 'Y', 'F', 'V', 'O', 'E' }; // II
         char[] arr2 = { 'B', 'D', 'F', 'H', 'J', 'L', 'C', 'P', 'R', 'T', 'X', 'V', 'Z', 'N', 'Y', 'E', 'I', 'W', 'G', 'A', 'K', 'M', 'U', 'S', 'Q', 'O' }; // III
-        char[] arr3 = { 'E', 'N', 'K', 'Q', 'A', 'U', 'Y', 'W', 'J', 'I', 'C', 'O', 'P', 'B', 'L', 'M', 'D', 'X', 'Z', 'V', 'F', 'T', 'H', 'R', 'G', 'S' }; //ZWROTNY STACJONARNY!!! UKW B M4
-        Rotor rotor0, rotor1, rotor2, rotor3;
+        char[] arr3 = { 'E', 'S', 'O', 'V', 'P', 'Z', 'J', 'A', 'Y', 'Q', 'U', 'I', 'R', 'H', 'X', 'L', 'N', 'F', 'T', 'G', 'K', 'D', 'C', 'M', 'W', 'B' }; // III
+        char[] arr4 = { 'E', 'N', 'K', 'Q', 'A', 'U', 'Y', 'W', 'J', 'I', 'C', 'O', 'P', 'B', 'L', 'M', 'D', 'X', 'Z', 'V', 'F', 'T', 'H', 'R', 'G', 'S' }; //ZWROTNY STACJONARNY!!! UKW B M4
+        Rotor rotor0, rotor1, rotor2, rotor3, rotor4;
         char letter = '0';
+        bool key_pressed = false;
         public MainWindow()
         {
             InitializeComponent();
-            rotor3 = new Rotor(arr3); //ZWROTNY
+            rotor4 = new Rotor(arr4); //ZWROTNY
+            rotor3 = new Rotor(arr3);
             rotor2 = new Rotor(arr2);
             rotor1 = new Rotor(arr1);
             rotor0 = new Rotor(arr0);
@@ -63,6 +66,8 @@ namespace Enigma
             iletter = rotor1.rightImpulse(iletter);
             iletter = rotor2.rightImpulse(iletter);
             iletter = rotor3.rightImpulse(iletter);
+            iletter = rotor4.rightImpulse(iletter);
+            iletter = rotor3.leftImpulse(iletter);
             iletter = rotor2.leftImpulse(iletter);
             iletter = rotor1.leftImpulse(iletter);
             iletter = rotor0.leftImpulse(iletter);
@@ -73,6 +78,8 @@ namespace Enigma
         
         private void Window_KeyDown_1(object sender, KeyEventArgs e)
         {
+            if(key_pressed) return;
+            key_pressed = true;
             if (e.Key == Key.Q) letter = encode('Q');
             if (e.Key == Key.W) letter = encode('W');
             if (e.Key == Key.E) letter = encode('E');
@@ -130,6 +137,7 @@ namespace Enigma
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
+            key_pressed = false;
             if (letter == 'Q') QElipse.Fill = Brushes.Transparent;
             if (letter == 'W') WElipse.Fill = Brushes.Transparent;
             if (letter == 'E') EElipse.Fill = Brushes.Transparent;
@@ -164,12 +172,12 @@ namespace Enigma
         {
             if (num == 3)
             {
-                char[] rotValues = rotor3.visibleLetters();
-                Rotor3txtU2.Text = Convert.ToString(rotValues[0]);
-                Rotor3txtU1.Text = Convert.ToString(rotValues[1]);
-                Rotor3txtCenter.Text = Convert.ToString(rotValues[2]);
-                Rotor3txtD1.Text = Convert.ToString(rotValues[3]);
-                Rotor3txtD2.Text = Convert.ToString(rotValues[4]);
+                int rotValue = rotor3.Rotations;
+                Rotor3txtU2.Text = Convert.ToString(Convert.ToChar((((rotValue - 2) % 26) + 65)));
+                Rotor3txtU1.Text = Convert.ToString(Convert.ToChar((((rotValue - 1) % 26) + 65)));
+                Rotor3txtCenter.Text = Convert.ToString(Convert.ToChar(((rotValue % 26) + 65)));
+                Rotor3txtD1.Text = Convert.ToString(Convert.ToChar((((rotValue + 1) % 26) + 65)));
+                Rotor3txtD2.Text = Convert.ToString(Convert.ToChar((((rotValue + 2) % 26) + 65)));
             }
             if (num == 2)
             {
