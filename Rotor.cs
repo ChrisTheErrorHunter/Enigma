@@ -19,7 +19,6 @@ namespace Enigma
                 inttab[i] = Convert.ToInt32(sign) - 65;
                 i++;
             }
-            //for (int k = 0; k < 26; k++) Console.WriteLine(inttab[k]);
 
         }
         public void moveDown()
@@ -32,7 +31,6 @@ namespace Enigma
             }
             inttab[0] = tmp;
             rotations--;
-            //for (int k = 0; k < 26; k++) Console.WriteLine(inttab[k]);
         }
         public void moveUp()
         {
@@ -44,7 +42,6 @@ namespace Enigma
             }
             inttab[25] = tmp;
             rotations++;
-            //for (int k = 0; k < 26; k++) Console.WriteLine(inttab[k]);
         }
 
         public void fakeMove()

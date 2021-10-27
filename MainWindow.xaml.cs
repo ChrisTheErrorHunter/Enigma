@@ -54,6 +54,11 @@ namespace Enigma
                 {
                     rotor2.moveUp();
                     updateRotors(2);
+                    if(rotor2.Rotations % 26 ==0)
+                    {
+                        rotor3.moveUp();
+                        updateRotors(3);
+                    }
                 }
             }
         }
@@ -199,12 +204,6 @@ namespace Enigma
             }
             if (num == 0)
             {
-                //char[] rotValues = rotor0.visibleLetters();
-                //Rotor0txtU2.Text = Convert.ToString(rotValues[0]);
-                //Rotor0txtU1.Text = Convert.ToString(rotValues[1]);
-                //Rotor0txtCenter.Text = Convert.ToString(rotValues[2]);
-                //Rotor0txtD1.Text = Convert.ToString(rotValues[3]);
-                //Rotor0txtD2.Text = Convert.ToString(rotValues[4]);
                 int rotValue = rotor0.Rotations;
                 Rotor0txtU2.Text = Convert.ToString(Convert.ToChar((((rotValue - 2) % 26) + 65)));
                 Rotor0txtU1.Text = Convert.ToString(Convert.ToChar((((rotValue - 1) % 26) + 65)));
